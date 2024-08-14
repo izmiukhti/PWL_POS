@@ -42,8 +42,14 @@ class AnggotaController extends Controller
     //     echo "data berhasil di hapus";
     // }
 
-    public function all(){
-        $result= Anggota::all();
-        return view('tampilkan_anggota',['anggota'=>$result]);
+    // public function all(){
+    //     $result= Anggota::all();
+    //     return view('tampilkan_anggota',['anggota'=>$result]);
+    // }
+
+    public function find()
+    {
+        $result=Anggota::find(3);
+        return view('tampilkan_anggota', ['anggota' => [$result]]);
     }
 }

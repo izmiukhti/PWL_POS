@@ -26,7 +26,7 @@ class UserController extends Controller
 
         UserModel::where('username', 'izmi')->delete();
 
-        $user = UserModel::all();
+        $user = UserModel::with('level')->get();
         return view('user', ['data' => $user]);
     }
 }
